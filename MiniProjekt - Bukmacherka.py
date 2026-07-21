@@ -63,7 +63,7 @@ while saldo > 0:
     print()
 
     print("Wynik meczu to... ")
-    time.sleep(1.5)
+    time.sleep(2)
     print()
 
     wynik_meczu = random.randint(1,100)
