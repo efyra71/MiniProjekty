@@ -9,8 +9,12 @@ while saldo > 0:
 
     try:
         bet = float(input("Ile pieniędzy chcesz postawić?: "))
+        if bet <= 0:
+            print("Stawka musi być większa niż 0 PLN!")
+            print()
+            continue
 
-        if bet > saldo:
+        elif bet > saldo:
             print("Nie masz wystarczającej ilości środków do gry.")
             print()
             continue
@@ -48,6 +52,7 @@ while saldo > 0:
     except ValueError:
         print()
         print("Wprowadzone dane są nieprawdiłowe.")
+        continue
 
     print("Mecz się rozpoczął... Trwa analiza kuponu...")
     time.sleep(1.5)
