@@ -23,14 +23,17 @@ def alarm_set():
                 awake = input("Hit Enter if you are awake: ")
                 if awake == "":
                     pygame.mixer.music.stop()
-                    break
+                    quit()
                 else:
                     continue
 
+while True:
+    choice = input("Do you want to set an alarm? (Y/N): ").upper()
+    match choice:
+        case "Y":
+            alarm_set()
+        case "N":
+            quit()
+        case _:
+            print("Invalid input. Please enter 'Y' or 'N'.\n")
 
-choice = input("Do you want to set an alarm? (Y/N): ").upper()
-match choice:
-    case "Y":
-        alarm_set()
-    case "N":
-        quit()
