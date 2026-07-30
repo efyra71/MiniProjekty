@@ -34,7 +34,3 @@ match choice:
         alarm_set()
     case "N":
         quit()
-
-
-
-
