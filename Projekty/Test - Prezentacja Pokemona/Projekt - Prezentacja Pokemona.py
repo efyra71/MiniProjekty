@@ -1,6 +1,7 @@
 import sys
 import requests
 import time
+import os
 
 from PySide6.QtWidgets import QApplication, QMainWindow, QLabel
 from PySide6.QtGui import QPixmap
@@ -64,7 +65,10 @@ if response.status_code == 200:
 
     if image.status_code == 200:
 
-        with open("pokemon.png", "wb") as file:
+        folder_skryptu = os.path.dirname(os.path.abspath(__file__))
+        sciezka_obrazka = os.path.join(folder_skryptu, "pokemon.png")
+
+        with open(sciezka_obrazka, "wb") as file:
             file.write(image.content)
 
         print("\nYour pokemon will appear soon...")
@@ -72,7 +76,7 @@ if response.status_code == 200:
 
         app = QApplication(sys.argv)
 
-        window = MainWindow("pokemon.png")
+        window = MainWindow(sciezka_obrazka)  # Podajemy pełną ścieżkę do pliku
         window.show()
 
         sys.exit(app.exec())
