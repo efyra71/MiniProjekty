@@ -24,7 +24,7 @@ class MainWindow(QMainWindow):     # tworzenie klasy, pobiera dziedziczenie z QM
 
 api_url = "https://pokeapi.co/api/v2"
 
-pokemon_input = input("Choose your pokemon: ").lower()
+pokemon_input = input("Choose your pokemon: ").lower().strip()
 
 pokemon_url = f"{api_url}/pokemon/{pokemon_input}"
 
